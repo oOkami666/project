@@ -1,8 +1,10 @@
-@import '~styles/variables';
+@import './src/styles/variables';
 
 .message {
+    $self: &;
     display: flex;
     max-width: 500px;
+    margin-bottom: 15px;
     &__avatar {
         display: flex;
         flex-direction: column-reverse;
@@ -15,7 +17,24 @@
         }
     }
 
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__contentCheck {
+        display: flex;
+        flex-direction: row-reverse;        
+        img {
+            max-height: 18px;
+            align-self: flex-end;
+            margin-left: 8px;
+            }
+    }
+
     &__bubble {
+        width: fit-content;
         background: $blue;
         box-shadow: 0px 5px 5px #c4e2ff;
         border-radius: 10px 10px 10px 0px;
@@ -29,7 +48,109 @@
     }
 
     &__text {
+        max-width: 530px;
         margin-bottom: 0px;
         color: #ffffff
+    }
+
+    &__attachments{
+        margin-bottom: 5px;
+        display: flex;
+        &-item {
+            img{
+                cursor: pointer;
+        margin-right: 3px;
+        height: 45px;
+        width: 45px;
+        border-radius: 8px;
+        }}
+    }
+
+    &--isme{
+
+        display: flex;
+        flex-direction: row-reverse;
+        #{$self}__bubble {            
+            background-color: #ffffff;
+            border-radius: 10px 10px 0px 10px;
+            box-shadow: 0px 5px 5px #b6b6b6;
+        }
+
+        #{$self}__content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-right: 15px;
+        }
+
+        #{$self}__contentCheck {
+            display: flex;
+            flex-direction: row;
+            img {
+                margin-right: 8px;
+                }
+        }
+
+        #{$self}__text {          
+            color: #020202;
+        }
+    }
+
+    &__typing {
+        span {
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            background: #ffffff;
+            display: inline-block;
+            margin-right: 8px;
+            animation-name: typingAnimation;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+
+        &:nth-of-type(1) {
+            animation-delay: 0s;
+        }
+        &:nth-of-type(2) {
+            animation-delay: 0.25s;
+        }
+        &:nth-of-type(3) {
+            animation-delay: 0.5s;
+        }
+        }
+    }
+
+    &--image {
+        #{$self}__attachments {
+            &-item {
+                img {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+        }
+        #{$self}__avatar {
+            img {
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    &--typing {
+        #{$self}__avatar {
+            img {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+@keyframes typingAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
