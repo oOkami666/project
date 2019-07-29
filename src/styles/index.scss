@@ -1,3 +1,4 @@
+@import '~reset-css';
 @import '~antd/dist/antd.css';
 
 body, 
@@ -5,4 +6,9 @@ html,
 #root, 
 .wrapper {
     height: 100%;
+    font-size: 14px;
+}
+
+* {
+    outline: none
 }

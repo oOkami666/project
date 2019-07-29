@@ -66,6 +66,49 @@
         }}
     }
 
+    &--is-audio {
+        width: 230px;
+        #{$self}__bubble {
+            position: relative;
+            overflow: hidden;
+            width: 250px;
+        }
+        #{$self}__audio {
+            &-info {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            &-btn {
+                button {
+                    cursor: pointer;
+                    border: 0;
+                    border-radius: 14px;
+                    width: 28px;
+                    height: 28px;
+                    background: #cfe8ff;
+                    img {
+                        height: 14px;
+                    }
+                }
+            }
+            &-duration {
+                color: rgb(255, 255, 255);
+                font-weight: 500;
+                opacity: 0.7;
+                font-size: 14px;
+            }
+            &-progress {
+                height: 100%;
+                top: 0;
+                left: 0;
+                position: absolute;
+                background: rgb(175, 219, 255);
+            }
+        }
+    }
+
     &--isme{
 
         display: flex;

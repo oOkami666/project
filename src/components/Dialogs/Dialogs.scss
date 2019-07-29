@@ -1,0 +1,95 @@
+.dialog {
+    width: 300px;
+    &__item {
+        line-height: 1;
+        display: flex;
+        $item: &;
+        margin-bottom: 20px;
+
+        &-avatar {
+            position: relative;
+            flex: 0 0 40px;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+
+        &--online {
+            #{$item}-avatar {
+                &::before {
+                    display: block;
+                    position: absolute;
+                    bottom: 2px;
+                    right: 0;
+                    content: '';
+                    background-color: green;
+                    border-radius: 30px;
+                    width: 13px;
+                    height: 13px;
+                    border: 3px solid #fff;
+                }
+            }
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+            &-top {
+                margin-bottom: 6px;
+                display: flex;
+                b {
+                    flex: 1;
+                    font-weight: 700;
+                    font-size: 14px;
+                };
+                span {
+                    opacity: 0.5;
+                }
+            }
+            &-buttom {
+                position: relative;
+                height: 14px;
+                p {
+                    margin-bottom: 0;
+                    opacity: 0.5;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    width: 225px;
+                    height: 1.2em;
+                    white-space: nowrap;
+                }
+                &-counter {
+                    background: red;
+                    color: white;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    font-weight: bold;
+                    min-width: 18px;
+                    width: auto;
+                    height: 18px;
+                    border-radius: 9px;
+                    font-size: 11px;
+                    text-align: center;
+                    line-height: 17px;
+                    box-shadow: 0 0 3px #fff;
+                }
+
+                img {
+                    height: 15px;
+                    position: absolute;
+                    bottom: 0;
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
