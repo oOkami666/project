@@ -119,7 +119,7 @@ const Message = ({
                 {(audio || text || isTyping) && (
                 <div className='message__bubble'>
                     {text && <p className='message__text'>
-                    {text}<Emoji emoji=':smile:' size={16} />
+                    {text}<Emoji emoji=':smile:' size={18} />
                     </p>
                     }
                     {isTyping && (
