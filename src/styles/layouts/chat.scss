@@ -1,0 +1,120 @@
+.chat {
+   display: flex;
+   background-color: rgb(255, 255, 255); 
+   height: 100%;
+   width: 1140px;
+   margin: 0 auto;
+   box-shadow: 0px 0px 25px #c2c2c2;
+
+   &__sidebar {
+        border-right: 1px solid #f7f7f7;
+        width: 320px;
+       &-header {
+            border-bottom: 1px solid #f7f7f7;
+           height: 58px;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           padding: 20px;
+
+           & > div {
+               i {
+                   display: inline-block;
+                   margin-right: 5px;
+               }
+           }
+       }
+
+       &-dialogs {
+            height: calc(100% - 58px);
+           .dialog {
+                &-search {
+                    padding: 10px 20px;
+                    .ant-input {
+                        background-color: rgb(238, 238, 238);
+                        border: 0;
+                        height: 38px;
+                    }
+                }
+               height: 100%;
+               &-list {
+                    overflow: auto;
+                    height: calc(100% - 58px);
+               
+               &__item {
+                   padding: 10px 20px;
+                    cursor: pointer;
+                   
+                    &.active,
+                    &:hover {
+                       background-color: #eff5f8;
+                   }
+               }}
+           }
+       }
+   }
+
+
+
+   &__dialog {
+       flex: 1;
+       
+       &-header {
+           height: 58px;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 10px;
+           border-bottom: 1px solid #f7f7f7;
+           
+            &-centre {
+                text-align: center;
+            }
+
+            &-username {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: 700; 
+           }   
+       }
+
+       
+
+        &-messages {
+            //padding: 10px 10px 10px 20px;
+            //overflow: auto;
+            height: calc(100% - 129px);
+           /* .ant-empty {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(50%, 50%);
+                
+                display: flex;
+            }
+            /*
+            .ant-spin {
+                color: #202020;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(75%, -50%);
+                }
+            */    
+        }
+   }
+
+   .ant-btn-circle {
+    border: 0;
+    box-shadow: none;
+    color: #202020 !important;
+    opacity: 0.6;
+    &:hover {
+        opacity: 1;
+    }
+    .anticon {
+        margin-top: 4px;
+        font-size: 18px;
+    }
+   }
+}

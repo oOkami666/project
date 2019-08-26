@@ -1,10 +1,15 @@
 .dialog {
-    width: 300px;
-    &__item {
+    &-list
+    {
+        &__item {
         line-height: 1;
         display: flex;
         $item: &;
-        margin-bottom: 20px;
+        margin-bottom: 0;
+
+        &--selected {
+            background-color: #eff5f8;
+        }
 
         &-avatar {
             position: relative;
@@ -61,7 +66,7 @@
                     opacity: 0.5;
                     text-overflow: ellipsis;
                     overflow: hidden;
-                    width: 225px;
+                    width: 210px;
                     height: 1.2em;
                     white-space: nowrap;
                 }
@@ -91,5 +96,5 @@
                 }
             }
         }
-    }
+    }}
 }

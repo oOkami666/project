@@ -1,0 +1,57 @@
+.chat-input {
+    border-top: 1px solid #f7f7f7;
+    display: flex;
+    padding: 15px;
+    align-items: center;
+
+    &__actions {
+        display: flex;
+
+        &-upload-btn {
+            cursor: pointer;
+            input {
+                cursor: pointer;
+            }
+            &:hover {
+                button {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .ant-btn-circle {
+        border: 0;
+        box-shadow: none;
+        color: #202020 !important;
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+        &:after {
+            display: none;
+        }
+        .anticon {
+            margin-top: 3px;
+            font-size: 20px;
+        }
+    }
+
+    &__emoji-picker {
+        position: absolute;
+        bottom: 58px;
+        z-index: 1;
+        .emoji-mart-search {
+                input {
+                    margin: 0;
+                }
+        }
+    }
+
+    input {
+        margin: 0 10px;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
